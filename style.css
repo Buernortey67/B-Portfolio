@@ -1,0 +1,859 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff;
+  background-color: #121212;
+}
+
+.white-text {
+  color: white;
+}
+
+.about .content {
+  color: #ffffff; /* Ensure consistent text color */
+  padding-left: 20px; /* Add some padding to the left to give space between image and text */
+}
+
+.about .about-text {
+  color: #ffffff; /* Ensure all text has the same color */
+}
+
+.section-title h2 {
+  color: #00ff00; /* Bright color for the heading to make it stand out */
+}
+
+a {
+  color: #00ff00; /* Neon Green */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #00cc00; /* Darker Neon Green */
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+
+
+/* Custom Styles */
+#top-header {
+  width: 100%;
+  height: 80px;
+  background: #20232a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  padding: 0 20px;
+}
+
+#top-header .logo img {
+  height: 60px;
+}
+
+#header {
+  top: 80px; /* Adjust top position to be below the top header */
+}
+
+/* Other styles from the original CSS */
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #272829;
+}
+
+a {
+  color: #00cc00;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #00cc00;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+
+
+/* Additional styles can be included as needed */
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: #00ff00;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.back-to-top i {
+  font-size: 28px;
+  color: #121212;
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: #00cc00;
+  color: #121212;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #121212;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #00ff00;
+  border-top-color: #121212;
+  border-bottom-color: #121212;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 9997;
+  transition: all 0.5s;
+  padding: 15px;
+  overflow-y: auto;
+  background: #1e1e1e;
+}
+
+@media (max-width: 991px) {
+  #header {
+    width: 300px;
+    background: #1e1e1e;
+    border-right: 1px solid #333;
+    left: -300px;
+  }
+}
+
+@media (min-width: 991px) {
+  #main {
+    margin-left: 100px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Desktop Navigation */
+.nav-menu {
+  padding: 0;
+  display: block;
+}
+
+.nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu > ul > li {
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-menu a,
+.nav-menu a:focus {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  padding: 10px 18px;
+  margin-bottom: 8px;
+  transition: 0.3s;
+  font-size: 15px;
+  border-radius: 50px;
+  background: #333;
+  height: 56px;
+  width: 100%;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.nav-menu a i,
+.nav-menu a:focus i {
+  font-size: 20px;
+}
+
+.nav-menu a span,
+.nav-menu a:focus span {
+  padding: 0 5px 0 7px;
+  color: #ffffff;
+}
+
+@media (min-width: 992px) {
+  .nav-menu a,
+  .nav-menu a:focus {
+    width: 56px;
+  }
+
+  .nav-menu a span,
+  .nav-menu a:focus span {
+    display: none;
+    color: #ffffff;
+  }
+}
+
+.nav-menu a:hover,
+.nav-menu .active,
+.nav-menu .active:focus,
+.nav-menu li:hover > a {
+  color: #121212;
+  background: #00ff00;
+}
+
+.nav-menu a:hover span,
+.nav-menu .active span,
+.nav-menu .active:focus span,
+.nav-menu li:hover > a span {
+  color: #121212;
+}
+
+.nav-menu a:hover,
+.nav-menu li:hover > a {
+  width: 100%;
+  color: #121212;
+}
+
+.nav-menu a:hover span,
+.nav-menu li:hover > a span {
+  display: block;
+}
+
+/* Mobile Navigation */
+.mobile-nav-toggle {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 9998;
+  border: 0;
+  background: none;
+  font-size: 28px;
+  transition: all 0.4s;
+  outline: none !important;
+  line-height: 0;
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.mobile-nav-toggle i {
+  color: #ffffff;
+}
+
+.mobile-nav-active {
+  overflow: hidden;
+}
+
+.mobile-nav-active #header {
+  left: 0;
+}
+
+.mobile-nav-active .mobile-nav-toggle {
+  color: #121212;
+  background-color: #00ff00;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url("assets/img/back.png") top right no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  #hero {
+    padding-left: 160px;
+  }
+}
+
+#hero:before {
+  content: "";
+  background: rgba(18, 18, 18, 0.8);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero h1 {
+  margin: 0;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #ffffff;
+}
+
+#hero p {
+  color: #ffffff;
+  margin: 15px 0 0 0;
+  font-size: 26px;
+  font-family: "Poppins", sans-serif;
+}
+
+#hero p span {
+  color: #00ff00;
+  letter-spacing: 1px;
+}
+
+#hero .social-links {
+  margin-top: 30px;
+}
+
+#hero .social-links a {
+  font-size: 24px;
+  display: inline-block;
+  color: #ffffff;
+  line-height: 1;
+  margin-right: 20px;
+  transition: 0.3s;
+}
+
+#hero .social-links a:hover {
+  color: #00ff00;
+}
+
+@media (max-width: 992px) {
+  #hero {
+    text-align: center;
+  }
+
+  #hero h1 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  #hero p {
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #ffffff;
+}
+
+.section-title h2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #333;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #00ff00;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+.section-title p {
+  margin-bottom: 0;
+  color: #aaaaaa;
+}
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about .content {
+  color: #ffffff; /* Ensure consistent text color */
+  padding-left: 20px; /* Add some padding to the left to give space between image and text */
+  transition: transform 0.3s ease, border 0.3s ease; /* Add transition for smooth animation */
+}
+
+.about .content:hover {
+  transform: translateY(-10px); /* Move text up on hover */
+  border: 2px solid #00ff00; /* Add green border on hover */
+  padding: 18px; /* Adjust padding to account for border */
+  border-radius: 10px; /* Optional: add rounded corners */
+}
+
+.profile-picture {
+  transition: transform 0.3s ease, border 0.3s ease; /* Add transition for smooth animation */
+}
+
+.profile-picture:hover {
+  transform: scale(1.05); /* Scale up the image slightly on hover */
+  border: 2px solid #00ff00; /* Add green border on hover */
+  border-radius: 10px; /* Optional: add rounded corners */
+}
+
+.about .about-text {
+  color: #ffffff; /* Ensure all text has the same color */
+}
+
+
+/*--------------------------------------------------------------
+# Skills
+--------------------------------------------------------------*/
+.skills .icon-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px; /* Set a fixed width */
+  height: 150px; /* Set a fixed height */
+  margin: 10px auto; /* Center align with margin */
+  background: #1a1a1a; /* Background color */
+  border-radius: 10px; /* Optional rounded corners */
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  color: #00ff00; /* Text color */
+}
+
+.skills .icon-box i {
+  font-size: 48px; /* Icon size */
+  margin-bottom: 10px; /* Space between icon and text */
+}
+
+.skills .icon-box h4 {
+  font-size: 16px; /* Text size */
+}
+
+.skills .icon-box:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 255, 0, 0.2);
+}
+
+/* Ensure all columns are consistent */
+.skills .col-lg-3, .skills .col-md-4, .skills .col-6 {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/*--------------------------------------------------------------
+# Resume
+--------------------------------------------------------------*/
+/* Button styling */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  color: #fff; /* Text color */
+}
+
+/* Green button specific styling */
+.btn-green {
+  background-color: #28a745; /* Green color */
+  color: white;
+}
+
+.btn-green:hover {
+  background-color: #218838; /* Darker green on hover */
+  color: white;
+}
+
+/*--------------------------------------------------------------
+# Projects
+--------------------------------------------------------------*/
+.project .project-item {
+  margin-bottom: 30px;
+}
+
+.project .img-container {
+  position: relative;
+}
+
+.project .img-fluid {
+  width: 100%;
+  height: auto;
+}
+
+.project .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project .project-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project .project-info h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #00ff00; /* Adjust color as needed */
+}
+
+.project .project-info p {
+  color: #ffffff; /* Adjust color as needed */
+  font-size: 14px;
+}
+
+.project .img-container:hover .overlay,
+.project .img-container:hover .project-info {
+  opacity: 1;
+}
+
+.project .project-wrap:hover img {
+  filter: brightness(0.5); /* Optionally dim the image on hover */
+}
+
+.project .project-wrap {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border: 3px solid transparent; /* Border for the green effect */
+  border-radius: 10px; /* Optional rounded corners */
+}
+
+.project .project-wrap::before,
+.project .project-wrap::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background: #00ff00;
+  transition: all 0.3s ease;
+}
+
+.project .project-wrap::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.project .project-wrap::after {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.project .project-wrap:hover::before,
+.project .project-wrap:hover::after {
+  width: 100%;
+}
+
+.project .project-wrap:hover {
+  border-color: #00ff00; /* Green border on hover */
+}
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact .info {
+  width: 100%;
+  background: #1e1e1e;
+}
+
+.contact .info i {
+  font-size: 20px;
+  color: #00ff00;
+  float: left;
+  width: 44px;
+  height: 44px;
+  background: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #00ff00;
+}
+
+.contact .info p {
+  padding: 0 0 0 60px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #aaaaaa;
+}
+
+.contact .info .email,
+.contact .info .phone {
+  margin-top: 40px;
+}
+
+.contact .info .email:hover i,
+.contact .info .address:hover i,
+.contact .info .phone:hover i {
+  background: #00ff00;
+  color: #121212;
+}
+
+.contact .php-email-form {
+  width: 100%;
+  background: #1e1e1e;
+}
+
+.contact .php-email-form .form-group {
+  padding-bottom: 8px;
+}
+
+.contact .php-email-form .error-message {
+  display: none;
+  color: #ffffff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .error-message br + br {
+  margin-top: 25px;
+}
+
+.contact .php-email-form .sent-message {
+  display: none;
+  color: #ffffff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .loading {
+  display: none;
+  background: #1e1e1e;
+  text-align: center;
+  padding: 15px;
+}
+
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #333;
+  animation: animate-loading 1s linear infinite;
+}
+
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  border-radius: 4px;
+  box-shadow: none;
+  font-size: 14px;
+  background: #333;
+  color: #ffffff;
+}
+
+.contact .php-email-form input[type=text],
+.contact .php-email-form input[type=email] {
+  height: 44px;
+}
+
+.contact .php-email-form textarea {
+  padding: 10px 12px;
+}
+
+/* Add placeholder styling */
+.contact .php-email-form input::placeholder,
+.contact .php-email-form textarea::placeholder {
+  color: #cccccc; /* Lighten the placeholder text color */
+  opacity: 1; /* Ensure full opacity for placeholder text */
+}
+
+.contact .php-email-form button[type=submit] {
+  background: #00ff00;
+  border: 0;
+  padding: 10px 35px;
+  color: #121212;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: #00cc00;
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  background: #1e1e1e;
+  color: #ffffff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+#footer h5 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #00ff00;
+}
+
+#footer p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #aaaaaa;
+}
+
+#footer .social-links {
+  margin: 20px 0;
+}
+
+#footer .social-links a {
+  display: inline-block;
+  background: #00ff00;
+  color: #121212;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+#footer .social-links a:hover {
+  background: #ffffff;
+  color: #00ff00;
+}
+
+#footer .social-links i {
+  font-size: 20px;
+}
+
+#footer p:last-of-type {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #888888;
+}
+
