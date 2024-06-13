@@ -328,15 +328,3 @@ document.querySelectorAll('.nav-link.scrollto').forEach(link => {
   new PureCounter();
 
 })()
-
-//Code for sending email from form
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  emailjs.sendForm("service_gnw2t5z", "template_plfaib1", this)
-      .then(function() {
-          alert('Your message has been sent successfully!');
-      }, function(error) {
-          alert('Failed to send the message. Please try again later.');
-      });
-});
