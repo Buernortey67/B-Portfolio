@@ -43,6 +43,18 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+/* CSS to adjust the offset for fixed header on specific sections */
+#about::before,
+#skills::before,
+#resume::before,
+#projects::before,
+#contact::before {
+  content: "";
+  display: block;
+  height: 80px; /* Adjust this value according to your header height */
+  margin-top: -80px; /* Adjust this value according to your header height */
+  visibility: hidden;
+}
 
 
 /* Custom Styles */
