@@ -200,6 +200,65 @@
 
   });
 
+
+  function scrollToSection(id) {
+    const element = document.getElementById(id);
+    const headerOffset = 80; // 
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+    });
+}
+
+// Attach event listeners to nav links
+document.querySelectorAll('.nav-link.scrollto').forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
+    const sectionId = this.getAttribute('data-section');
+    scrollToSection(sectionId);
+  });
+});
+
+
+
+/*document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const formData = new FormData(form);
+
+  const loading = form.querySelector('.loading');
+  const errorMessage = form.querySelector('.error-message');
+  const sentMessage = form.querySelector('.sent-message');
+
+  loading.style.display = 'block';
+  errorMessage.style.display = 'none';
+  sentMessage.style.display = 'none';
+
+  fetch(form.action, {
+    method: form.method,
+    body: formData,
+  })
+  .then(response => response.text())
+  .then(text => {
+    loading.style.display = 'none';
+    if (text === 'OK') {
+      sentMessage.style.display = 'block';
+      form.reset();
+    } else {
+      errorMessage.style.display = 'block';
+      errorMessage.textContent = text;
+    }
+  })
+  .catch(error => {
+    loading.style.display = 'none';
+    errorMessage.style.display = 'block';
+    errorMessage.textContent = 'There was an error sending your message. Please try again.';
+  });
+});*/
   /**
    * Initiate portfolio lightbox 
    */
@@ -269,3 +328,15 @@
   new PureCounter();
 
 })()
+
+//Code for sending email from form
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  emailjs.sendForm("service_gnw2t5z", "template_plfaib1", this)
+      .then(function() {
+          alert('Your message has been sent successfully!');
+      }, function(error) {
+          alert('Failed to send the message. Please try again later.');
+      });
+});
